@@ -1,7 +1,7 @@
 :root {
   --bg-color: #000028;
   --accent-color: #ff0070;
-  --main-font: IBM Plex Mono;
+  --main-font: IBM Plex Mono, Monospace;
   --font-size: 18px;
   --line-h: 23.4px;
   --main-text-color: #f1b2ce;

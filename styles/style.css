@@ -73,7 +73,7 @@
   align-items: center;
   border: none;
   cursor: pointer;
-  font-family: var(--main-font, sans-serif);
+  font-family: var(--main-font, Monospace);
   color: var(--accent-color);
   font-size: var(--font-size);
 }
@@ -156,7 +156,9 @@
 }
 
 .content__link:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid var(--main-text-color);
+  display: inline-block;
+  line-height: 0.9em;
 }
 
 .content__link:focus {
