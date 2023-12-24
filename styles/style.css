@@ -1,5 +1,330 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: 10px;
+  color: var(--main-text-color);
+  font-family: var(--main-font, sans-serif);
+  font-size: var(--font-size);
+  background-color: var(--bg-color);
+  background-image: var(--bg-image);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  line-height: var(--line-h);
+}
+
+.header {
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-rows: 3fr 5fr 2fr 1fr;
+  padding-block-end: 20px;
+}
+
+.decorated-zone::before {
+  position: absolute;
+  content: "";
+  inline-size: 25.038px;
+  block-size: 24.999px;
+  background-color: transparent;
+  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--accent-color);
+  justify-self: end;
+}
+
+.header__decorated-element {
+  position: absolute;
+  inset-block-start: 10px;
+  inset-inline-end: 20px;
+  line-height: 25px;
+  color: var(--accent-color);
+  font-size: var(--font-size);
+}
+
+.header__decorated-element::after {
+  content: "";
+  margin-inline-start: 10px;
+  inline-size: 9px;
+  block-size: 9px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  display: inline-block;
+  filter: drop-shadow(0px 0px 4px var(--accent-color));
+}
+
+.header__theme-menu {
+  padding-block-start: 18%;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  align-items: end;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  display: flex;
+  block-size: 26px;
+  inline-size: 70px;
+  padding: 0px 13px;
+  justify-content: center;
+  align-items: center;
+  border: none;
+
+  font-family: var(--main-font, sans-serif);
+  color: var(--accent-color);
+  font-size: var(--font-size);
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--hover-accent-color);
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-block-end: 1px solid var(--accent-color);
+}
+
+.cover__title {
+  align-self: center;
+  color: var(--title-text-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+  text-shadow: var(--title-text-shadow);
+}
+
+.cover__description-text {
+  inline-size: 355px;
+  justify-self: end;
+  align-self: center;
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+  font-size: var(--font-size);
+}
+
+.decorated-zone::after {
+  content: "";
+  inline-size: 25.038px;
+  block-size: 24.999px;
+  background-color: transparent;
+  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--accent-color);
+  align-self: end;
+}
+
+.main {
+  margin-block-start: 30px;
+  display: grid;
+  gap: 50px;
+  margin-block-end: 40px;
+}
+
+.content {
+  display: grid;
+  gap: 20px;
+}
+
+.content__title {
+  font-size: var(--font-size);
+  line-height: var(--line-h);
+  color: var(--accent-color);
+}
+
+.content__article {
+  display: grid;
+  gap: 10px;
+}
+
+.content__link {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.content__link:hover {
+  text-decoration: underline;
+}
+
+.content__link:focus {
+  outline: none;
+}
+
+.content__link:focus-visible {
+  outline: 1px solid var(--main-text-color);
+  outline-offset: -1px;
+}
+
+.low-weight {
+  font-weight: 400;
+}
+
+.content__subtitle.title-decor.low-weight {
+  margin-block-start: 10px;
+}
+
+.content__gallery {
+  gap: 10px;
+}
+
+.content__gallery-list {
+  display: grid;
+  gap: 10px;
+}
+
+.content__gallery-image {
+  object-fit: cover;
+  inline-size: 100%;
+}
+
+.footer {
+  display: grid;
+  min-block-size: 100dvh;
+  padding-block-start: 20px;
+}
+
+.footer__title {
+  align-self: end;
+  justify-self: center;
+  color: var(--title-text-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-style: normal;
+  font-weight: 700;
+  line-height: 82.5%;
+  text-shadow: var(--footer-title-text-shadow);
+}
+
+@media (width >= 768px) {
+  .cover__description-text {
+    inline-size: 50%;
+  }
+
+  .page {
+    margin: 20px;
+  }
+
+  .header {
+    grid-template-rows: 4fr 5fr 2fr 2fr;
+    padding-block-end: 40px;
+  }
+
+  .header__decorated-element {
+    inset-block-start: 20px;
+    inset-inline-end: 30px;
+  }
+
+  .header__theme-menu {
+    align-self: center;
+  }
+
+  .cover__title {
+    margin: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .main {
+    margin-block-start: 40px;
+    gap: 80px;
+  }
+
+  .content {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .content__why > .content__article {
+    grid-column: 2;
+  }
+
+  .content__what > .content__article {
+    grid-column: 1/3;
+  }
+
+  .content__how > .content__article {
+    grid-column: 2;
+  }
+
+  .content__gallery {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
+
+  .content__gallery-list {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content__gallery-image {
+    block-size: 100%;
+  }
+
+  .books-img {
+    grid-area: 2/2;
+  }
+
+  .sunset-img {
+    grid-column: 1/3;
+  }
+
+  .ice-cream-img {
+    grid-column: 3/4;
+    grid-row: 1/3;
+  }
+
+  .street-img {
+    grid-column: 2/4;
+    grid-row: 3/4;
+  }
+
+  .tape-img {
+    grid-column: 1/2;
+    grid-row: 2/4;
+  }
+
+  .footer {
+    padding-block-start: 40px;
+  }
+
+  .footer__title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    align-self: start;
+    padding: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .cover__description-text {
+    align-self: end;
+  }
+
+  .content__what {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .content__what > .content__article {
+    grid-column: auto;
+    grid-auto-rows: min-content;
+    grid-row-start: 2;
+  }
 }
