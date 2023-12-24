@@ -73,7 +73,7 @@
   justify-content: center;
   align-items: center;
   border: none;
-
+  cursor: pointer;
   font-family: var(--main-font, sans-serif);
   color: var(--accent-color);
   font-size: var(--font-size);
@@ -110,6 +110,7 @@
   inline-size: 355px;
   justify-self: end;
   align-self: center;
+  white-space: pre-line;
 }
 
 .title-decor {
