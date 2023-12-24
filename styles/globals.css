@@ -7,9 +7,10 @@
 }
 
 body {
-  min-inline-size: 355px;
+  min-inline-size: 375px;
   max-inline-size: 3440px;
   margin: 0 auto;
+  margin: 0;
 }
 
 h1,
